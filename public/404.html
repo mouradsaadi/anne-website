@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anne Robin | Thérapeute conjugale et familiale</title>
+  </head>
+  <body>
+    <script>
+      var path = window.location.pathname;
+      var search = window.location.search;
+      var hash = window.location.hash;
+      var base = path.split('/').slice(0, 2).join('/') + '/';
+      var redirect = base + '?/' + path.slice(base.length) + search.replace(/&/g, '~and~') + hash;
+      window.location.replace(redirect);
+    </script>
+  </body>
+</html>
