@@ -19,6 +19,8 @@ const BookingCalendar: React.FC = () => {
   
   // Calendar Navigation State
   const [viewDate, setViewDate] = useState(new Date());
+  const phoneValue = formData.phone.trim();
+  const phoneLooksValid = !phoneValue || /^[0-9+().\s-]{6,}$/.test(phoneValue);
 
   // Load slots
   const loadData = async () => {
@@ -162,24 +164,16 @@ const BookingCalendar: React.FC = () => {
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-12 bg-sand-50 dark:bg-stone-950 transition-colors duration-200" id="booking">
-      <div className="flex flex-col lg:flex-row items-center lg:items-end justify-between mb-10 gap-6">
-        <div className="text-center lg:text-left">
-          <h2 className="text-3xl font-serif font-bold text-stone-800 dark:text-white">Prendre Rendez-vous</h2>
-          <p className="mt-2 text-stone-600 dark:text-stone-400">Sélectionnez une date et une heure pour votre séance.</p>
-        </div>
-        <div className="w-full max-w-xs lg:max-w-sm">
-          <img
-            src={`${assetBaseUrl}assets/images/therapy-couple.png`}
-            alt="Illustration séance de couple"
-            className="w-full h-auto rounded-lg shadow-sm"
-          />
-        </div>
+      <div className="text-center lg:text-left mb-10">
+        <h2 className="text-3xl font-serif font-bold text-stone-800 dark:text-white">Prendre Rendez-vous</h2>
+        <p className="mt-2 text-stone-600 dark:text-stone-400">Sélectionnez une date et une heure pour votre séance.</p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
         
         {/* Left Column: Calendar Date Picker */}
-        <div className="lg:col-span-5 bg-white dark:bg-stone-900 p-6 rounded-xl shadow-sm border border-stone-200 dark:border-stone-800 transition-colors duration-200 h-fit">
+        <div className="lg:col-span-5">
+          <div className="bg-white dark:bg-stone-900 p-6 rounded-xl shadow-sm border border-stone-200 dark:border-stone-800 transition-colors duration-200 h-fit">
           <h3 className="text-lg font-medium text-stone-900 dark:text-stone-100 mb-4 flex items-center">
             <Calendar className="h-5 w-5 mr-2 text-sage-500" /> Choisir une date
           </h3>
@@ -220,6 +214,7 @@ const BookingCalendar: React.FC = () => {
           <div className="mt-4 flex items-center justify-center space-x-4 text-xs text-stone-500 dark:text-stone-400">
              <div className="flex items-center"><span className="w-2 h-2 rounded-full bg-green-500 mr-2"></span> Disponible</div>
              <div className="flex items-center"><span className="w-2 h-2 rounded-full bg-stone-300 dark:bg-stone-700 mr-2"></span> Complet</div>
+          </div>
           </div>
         </div>
 
@@ -316,6 +311,11 @@ const BookingCalendar: React.FC = () => {
                                     onChange={e => setFormData({...formData, phone: e.target.value})}
                                 />
                             </div>
+                            {!phoneLooksValid && (
+                              <p className="text-xs text-amber-600 dark:text-amber-400 mt-1">
+                                Numéro incomplet. Merci de vérifier si besoin.
+                              </p>
+                            )}
                         </div>
                     </div>
 
@@ -377,7 +377,7 @@ const BookingCalendar: React.FC = () => {
                                     Consentement RGPD
                                 </label>
                                 <p className="text-stone-500 dark:text-stone-400 text-xs mt-1">
-                                    J'accepte que mes données personnelles soient traitées pour la gestion de mon rendez-vous, conformément à la <span className="underline cursor-pointer">politique de confidentialité</span>.
+                                    J'accepte que mes données personnelles soient traitées pour la gestion de mon rendez-vous, conformément à la <a href="#/legal" className="underline">politique de confidentialité</a>.
                                 </p>
                             </div>
                         </div>

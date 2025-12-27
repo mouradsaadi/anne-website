@@ -7,25 +7,25 @@ const services: ServiceItem[] = [
     title: "Thérapie de couple",
     description: "Réparer le dialogue, prévenir la rupture, gérer les crises ou préparer un projet commun.",
     duration: "60 min",
-    price: "Sur devis"
+    price: "50€"
   },
   {
     title: "Thérapie familiale",
     description: "Aligner parents et enfants, clarifier les rôles, apaiser les tensions intergénérationnelles.",
     duration: "60 min",
-    price: "Sur devis"
+    price: "50€"
   },
   {
-    title: "Thérapie individuelle",
-    description: "Estime de soi, gestion du stress et de l’angoisse, événements traumatiques, phobies.",
+    title: "Accompagnement individuelle",
+    description: "Accompagnement individuel centré sur le lien : couple, famille, communication et restauration des relations.",
     duration: "50 min",
-    price: "Sur devis"
+    price: "50€"
   },
   {
     title: "Consultations à distance",
     description: "Entretiens téléphoniques ou visio pour avancer où que vous soyez.",
     duration: "40-60 min",
-    price: "Sur devis"
+    price: "45€"
   },
   {
     title: "Ateliers & parcours",

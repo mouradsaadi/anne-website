@@ -15,6 +15,7 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPath, isDarkMode, to
     { name: 'Accueil', path: '/' },
     { name: 'À propos', path: '/about' },
     { name: 'Services', path: '/services' },
+    { name: 'Contact', path: '/contact' },
   ];
 
   return (

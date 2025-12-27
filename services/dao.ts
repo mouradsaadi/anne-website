@@ -36,9 +36,14 @@ export class LocalStorageDAO implements IAppointmentDAO {
       await this.seedData();
     }
     
+    const adminPassword = import.meta.env.VITE_ADMIN_PASSWORD;
     if (!localStorage.getItem(this.AUTH_KEY)) {
-      const hash = await this.sha256('admin123');
-      localStorage.setItem(this.AUTH_KEY, hash);
+      if (adminPassword) {
+        const hash = await this.sha256(adminPassword);
+        localStorage.setItem(this.AUTH_KEY, hash);
+      } else {
+        console.warn('VITE_ADMIN_PASSWORD is not set; admin login is disabled.');
+      }
     }
   }
 

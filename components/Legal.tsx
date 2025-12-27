@@ -21,10 +21,10 @@ const Legal: React.FC = () => {
             <div className="bg-stone-50 dark:bg-stone-800 p-6 rounded-lg">
               <p><strong>Propriétaire :</strong> Anne Robin</p>
               <p><strong>Statut :</strong> Conseillère Conjugale et Familiale</p>
-              <p><strong>SIRET :</strong> 123 456 789 00012</p>
+              <p><strong>SIRET :</strong> 447924382</p>
               <p><strong>Adresse :</strong> 109 ter, Rue Pierre Loti, 17300 Rochefort</p>
               <p><strong>Téléphone :</strong> 06 13 37 56 58</p>
-              <p><strong>Email :</strong> annerobin2018@outlook.fr</p>
+              <p><strong>Email :</strong> annerobinccf@outlook.fr</p>
               <p><strong>Directeur de la publication :</strong> Anne Robin</p>
             </div>
           </section>
@@ -34,9 +34,9 @@ const Legal: React.FC = () => {
             <h2 className="text-xl font-bold text-sage-600 dark:text-sage-400 mb-4 border-b border-stone-200 dark:border-stone-700 pb-2">2. Hébergement</h2>
             <p className="mb-2">Le site est hébergé par :</p>
             <div className="bg-stone-50 dark:bg-stone-800 p-6 rounded-lg">
-              <p><strong>Nom de l'hébergeur :</strong> Vercel Inc.</p>
-              <p><strong>Adresse :</strong> 340 S Lemon Ave #4133 Walnut, CA 91789, USA</p>
-              <p><strong>Site web :</strong> https://vercel.com</p>
+              <p><strong>Nom de l'hébergeur :</strong> OVHcloud</p>
+              <p><strong>Adresse :</strong> 2 rue Kellermann, 59100 Roubaix, France</p>
+              <p><strong>Site web :</strong> https://www.ovhcloud.com</p>
             </div>
           </section>
 
@@ -68,7 +68,7 @@ const Legal: React.FC = () => {
 
               <h3 className="font-bold text-stone-900 dark:text-stone-100 mt-4">Vos droits :</h3>
               <p>
-                Vous disposez d'un droit d'accès, de rectification, d'effacement ou de portabilité de vos données. Vous pouvez exercer ce droit en nous contactant à : <strong>annerobin2018@outlook.fr</strong>.
+                Vous disposez d'un droit d'accès, de rectification, d'effacement ou de portabilité de vos données. Vous pouvez exercer ce droit en nous contactant à : <strong>annerobinccf@outlook.fr</strong>.
               </p>
             </div>
           </section>

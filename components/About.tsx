@@ -35,7 +35,7 @@ const About: React.FC = () => {
               J’accompagne couples, parents, familles et individus pour retrouver confiance, apaiser les tensions et réinventer la communication, en cabinet ou à distance.
             </p>
             <p className="mt-4 text-base text-stone-500 dark:text-stone-400">
-              Mon approche est intégrative : écoute active, outils de thérapie comportementale et ateliers thématiques (estime de soi, émotions, parentalité, affectivité et sexualité) adaptés aux adultes comme aux adolescents.
+              Mon approche est intégrative : écoute active, outils de thérapie comportementale et travail intergénérationnel sur l’histoire personnelle et familiale. Comprendre ce qui s’est construit et ses répercussions actuelles dans le couple et la famille.
             </p>
 
             <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -62,8 +62,8 @@ const About: React.FC = () => {
                         <BookOpen className="h-6 w-6 text-sage-500 dark:text-sage-400" />
                     </div>
                     <div className="ml-3">
-                        <h3 className="text-sm font-medium text-stone-900 dark:text-stone-200">Formatrice</h3>
-                        <p className="mt-1 text-sm text-stone-500 dark:text-stone-400">Interventions en écoles, associations et entreprises</p>
+                        <h3 className="text-sm font-medium text-stone-900 dark:text-stone-200">Intervenante</h3>
+                        <p className="mt-1 text-sm text-stone-500 dark:text-stone-400">En écoles, associations et entreprises</p>
             </div>
                 </div>
             </div>

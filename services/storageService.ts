@@ -95,7 +95,7 @@ export const getAdminSettings = (): AdminSettings => {
     const data = localStorage.getItem(SETTINGS_KEY);
     // Default values including billing info and notification preferences
     const defaults: AdminSettings = { 
-        notificationEmail: 'annerobin2018@outlook.fr', 
+        notificationEmail: 'annerobinccf@outlook.fr', 
         receiveAlerts: true, 
         autoApprove: true,
         pricePerSession: 150,

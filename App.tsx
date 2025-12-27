@@ -1,13 +1,16 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense, lazy } from 'react';
 import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Services from './components/Services';
 import About from './components/About';
 import BookingCalendar from './components/BookingCalendar';
-import AdminDashboard from './components/AdminDashboard';
 import Legal from './components/Legal';
+import { config } from './config';
+import Contact from './components/Contact';
+
+const AdminDashboard = lazy(() => import('./components/AdminDashboard'));
 
 const HomePage = ({ onBookNow }: { onBookNow: () => void }) => (
   <>
@@ -25,6 +28,9 @@ const App: React.FC = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const assetBaseUrl = import.meta.env.BASE_URL.endsWith('/')
+    ? import.meta.env.BASE_URL
+    : `${import.meta.env.BASE_URL}/`;
 
   // Initialize Dark Mode from local storage or system preference
   useEffect(() => {
@@ -61,8 +67,25 @@ const App: React.FC = () => {
           <Route path="/" element={<HomePage onBookNow={() => navigate('/booking')} />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/booking" element={<BookingCalendar />} />
-          <Route path="/admin" element={<AdminDashboard />} />
+          <Route
+            path="/admin"
+            element={
+              config.useSupabase ? (
+                <div className="max-w-2xl mx-auto px-4 py-16 text-center">
+                  <h1 className="text-2xl font-serif font-bold text-stone-900 dark:text-stone-100">Espace admin indisponible</h1>
+                  <p className="mt-3 text-stone-600 dark:text-stone-400">
+                    L’espace professionnel est désactivé lorsque le stockage Supabase est activé.
+                  </p>
+                </div>
+              ) : (
+                <Suspense fallback={<div className="p-8 text-center text-stone-500">Chargement...</div>}>
+                  <AdminDashboard />
+                </Suspense>
+              )
+            }
+          />
           <Route path="/legal" element={<Legal />} />
         </Routes>
       </main>
@@ -77,7 +100,7 @@ const App: React.FC = () => {
              <h4 className="text-white text-lg font-serif mb-6 tracking-wider">Contact</h4>
              <div className="space-y-2 text-sm">
                 <p>109 ter, Rue Pierre Loti, 17300 Rochefort</p>
-                <p>annerobin2018@outlook.fr</p>
+                <p>annerobinccf@outlook.fr</p>
                 <p>06 13 37 56 58</p>
              </div>
           </div>
